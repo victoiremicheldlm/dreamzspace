@@ -6,10 +6,12 @@ const router = require("./router");
 
 const app = express();
 
+const dreams = [];
+
 // use some application-level middlewares
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
+    origin: process.env.FRONTEND_URL ?? "http://localhost:5000",
     optionsSuccessStatus: 200,
   })
 );
@@ -24,6 +26,16 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
 app.use(router);
+
+app.get("/api/dreams", (req, res) => {
+  res.json(dreams);
+});
+
+app.post("/api/dreams", (req, res) => {
+  const dream = req.body;
+  dreams.push(dream);
+  res.status(201).send();
+});
 
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(
