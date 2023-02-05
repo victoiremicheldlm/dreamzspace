@@ -1,36 +1,32 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import React from "react";
+import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar";
+// eslint-disable-next-line import/no-unresolved
+import Dreams from "../assets/dreams.svg";
+import "./Home.css";
 
-export default function Home() {
+function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div>
+      <NavBar />
+      <header className="app-header">
+        <h1>Welcome to </h1>
+        <img className="logo-dream" alt="DreamSpace logo" src={Dreams} />
+      </header>
+      <section>
+        <p className="app-header-about">
+          DreamSpace is a website that allows you to remember your dreams. Use
+          the form to input the details of your dream and keep track of them in
+          your profile.
+        </p>
+      </section>
+      <Link to="/signup">
+        <button className="start-button" type="button">
+          Acess DreamSpace
+        </button>
+      </Link>{" "}
+    </div>
   );
 }
+
+export default Home;

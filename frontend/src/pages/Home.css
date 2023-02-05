@@ -1,0 +1,42 @@
+body {
+  background-color: #0f0333;
+}
+
+.app-header {
+  margin-top: 2em;
+  font-size: 3.5em;
+  color: #e6d7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header img {
+  width: 5em;
+  height: 5em;
+  border-radius: 1.5em;
+}
+
+.app-header-about {
+  font-size: 2em;
+  color: #e6d7fb;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.start-button {
+  background-color: #e6d7fb;
+  color: rgba(70, 49, 124, 1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0.5em;
+  font-weight: 550;
+  border: 2px solid rgba(181, 134, 242, 1);
+}
+
+.start-button:hover {
+  background-color: rgba(113, 119, 132, 1);
+  color: #e6d7fb;
+}
