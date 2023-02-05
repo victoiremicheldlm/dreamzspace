@@ -2,7 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-const router = require("./router");
+const router = require("./router/auth");
+const routerApp = require("./router/app");
 
 const app = express();
 
@@ -25,7 +26,8 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
-app.use(router);
+app.use("/auth", router);
+app.use("/api", routerApp);
 
 app.get("/api/dreams", (req, res) => {
   res.json(dreams);
