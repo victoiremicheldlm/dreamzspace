@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import instanceAxios from "../services/axios";
-import { AuthContext } from "../context/AuthContext";
 // eslint-disable-next-line import/no-unresolved
 import Dreams from "../assets/dreams.svg";
+import cloudzz from "../assets/cloudzz.png";
+import Footer from "../components/Footer";
+
+import "./LogIn.css";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
   const { login } = useContext(AuthContext);
@@ -27,10 +32,12 @@ export default function Login() {
   return (
     <div>
       <div className="start-box">
+        <img className="clouds" alt="Clouds" src={cloudzz} />
         <img className="logo-dream" alt="DreamSpace logo" src={Dreams} />
-        <h2 className="title-signup"> Connectez-vous à votre compte</h2>
+        <img className="clouds" alt="Clouds" src={cloudzz} />
       </div>
       <form className="log-in" onSubmit={handleSubmit}>
+        <h2 className="title-signup"> Connectez-vous à votre compte</h2>
         <input
           id="email"
           name="email"
@@ -55,6 +62,7 @@ export default function Login() {
           </Link>
         </p>
       </div>
+      <Footer />
     </div>
   );
 }

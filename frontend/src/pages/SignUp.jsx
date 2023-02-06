@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import instanceAxios from "../services/axios";
 // eslint-disable-next-line import/no-unresolved
 import Dreams from "../assets/dreams.svg";
+import cloudzz from "../assets/cloudzz.png";
+import Footer from "../components/Footer";
 
 export default function Signin() {
   const navigate = useNavigate();
@@ -26,10 +28,14 @@ export default function Signin() {
   return (
     <div>
       <div className="start-box">
+        <img className="clouds" alt="Clouds" src={cloudzz} />
+
         <img className="logo-dream" alt="DreamSpace logo" src={Dreams} />
-        <h2 className="title-signup">Créer un compte</h2>
+        <img className="clouds" alt="Clouds" src={cloudzz} />
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="create-box" onSubmit={handleSubmit}>
+        <h2 className="title-signup">Créer un compte</h2>
+
         <input
           id="name"
           name="name"
@@ -53,13 +59,15 @@ export default function Signin() {
         />
         <button type="submit">✨ Create my DreamSpace ✨</button>
       </form>
-      <div className="log-in" />
-      <p>Vous avez déjà un compte ? </p>
-      <Link to="/">
-        <button className="start-button" type="button">
-          Connectez-vous
-        </button>
-      </Link>{" "}
+      <div className="yes">
+        <p>Vous avez déjà un compte ? </p>
+        <Link to="/">
+          <button className="start-button" type="button">
+            Connectez-vous
+          </button>
+        </Link>{" "}
+      </div>
+      <Footer />
     </div>
   );
 }

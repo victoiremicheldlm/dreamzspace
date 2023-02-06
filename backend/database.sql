@@ -1,6 +1,10 @@
-CREATE TABLE item (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO item (title) VALUES ('Stuff'), ('Doodads');
+CREATE TABLE dreams (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date DATE NOT NULL,
+  mood VARCHAR(255) NOT NULL,
+  vibe VARCHAR(255) NOT NULL,
+  genre VARCHAR(255) NOT NULL,
+  story TEXT NOT NULL,
+  user_name VARCHAR(255) NOT NULL,
+  is_deleted BOOLEAN DEFAULT false
+);
