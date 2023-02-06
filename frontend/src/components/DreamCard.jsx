@@ -1,20 +1,36 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-import React from "react";
-import "./DreamCard.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function DreamCard(props) {
-  const { date, mood, vibe, genre, story } = props.dream;
+const API_URL = "http://localhost:5000/api/dreams";
+
+export default function DreamsList() {
+  const [dreams, setDreams] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(API_URL);
+        setDreams(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
-    <div className="dream-card">
-      <h2 className="dream-card-date">{date}</h2>
-      <p className="dream-card-mood">Mood: {mood}</p>
-      <p className="dream-card-vibe">Vibe: {vibe}</p>
-      <p className="dream-card-genre">Genre: {genre}</p>
-      <p className="dream-card-story">Story: {story}</p>
+    <div>
+      <h1>Recorded Dreams</h1>
+      {dreams.map((dream) => (
+        // eslint-disable-next-line no-underscore-dangle
+        <div key={dream._id}>
+          <h2>{dream.date}</h2>
+          <p>Mood: {dream.mood}</p>
+          <p>Vibe: {dream.vibe}</p>
+          <p>Genre: {dream.genre}</p>
+          <p>Story: {dream.story}</p>
+        </div>
+      ))}
     </div>
   );
 }
-
-export default DreamCard;

@@ -2,41 +2,97 @@ body {
   background-color: #0f0333;
 }
 
-.app-header {
-  margin-top: 2em;
-  font-size: 3.5em;
-  color: #e6d7fb;
+.home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1em;
+  color: #fefefe;
 }
 
-.app-header img {
-  width: 5em;
-  height: 5em;
-  border-radius: 1.5em;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  color: #fefefe;
+  font-size: 1em;
 }
 
-.app-header-about {
-  font-size: 2em;
-  color: #e6d7fb;
-  margin-left: 2em;
-  margin-right: 2em;
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1em;
 }
 
-.start-button {
-  background-color: #e6d7fb;
-  color: rgba(70, 49, 124, 1);
+.form-header img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.form-header h1 {
+  font-size: 30px;
+  color: #fefefe;
+}
+
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-container label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.form-input-container input,
+.form-input-container select,
+.form-input-container textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-input-container input[type="date"] {
+  width: 100%;
+}
+
+.form-container select {
+  width: 100%;
+  padding: 1em;
+}
+
+.form-input-container textarea {
+  height: 100px;
+}
+
+.form-input-container input[type="submit"] {
+  background-color: #5aac44;
+  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  border: none;
   cursor: pointer;
-  margin: 0.5em;
-  font-weight: 550;
-  border: 2px solid rgba(181, 134, 242, 1);
+  transition: background-color 0.2s ease-in-out;
 }
 
-.start-button:hover {
-  background-color: rgba(113, 119, 132, 1);
-  color: #e6d7fb;
+.form-input-container input[type="submit"]:hover {
+  background-color: #3f7e1e;
+}
+
+.dream-form {
+  border: none;
+  color: #fefefe;
+  padding: 2.5em;
+}
+
+.dream-form label {
+  color: #fefefe;
+}
+
+.dream-form select {
+  padding: 1em;
+  margin-bottom: 0.5em;
 }
