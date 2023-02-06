@@ -1,15 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.item
-    .findAll()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+  res.send("Tu as tou les items");
 };
 
 const read = (req, res) => {

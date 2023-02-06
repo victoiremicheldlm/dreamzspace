@@ -1,0 +1,98 @@
+.log-in-form form {
+  display: flex;
+  flex-direction: row;
+  width: 40em;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 5px solid rgba(70, 49, 124, 1);
+  margin-top: 4em;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: rgba(70, 49, 124, 1);
+  font-weight: 700;
+}
+
+input[type="date" i] {
+  padding: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 0.5em;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: rgba(70, 49, 124, 1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8em;
+  cursor: pointer;
+  margin-bottom: 2em;
+  border: 2px solid rgba(181, 134, 242, 1);
+}
+
+button[type="submit"]:hover {
+  background-color: blue;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #6e40ff, #a55eea);
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  color: rgba(244, 245, 246, 1);
+  font-size: 1.5em;
+  border: 30px solid rgba(0, 0, 0, 0.5);
+}
+
+.modal-content p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background-color: #e6d7fb;
+  color: rgba(70, 49, 124, 1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0.5em;
+  font-weight: 550;
+  border: 2px solid rgba(181, 134, 242, 1);
+}
+
+.modal-content button:hover {
+  background-color: rgba(113, 119, 132, 1);
+  color: #e6d7fb;
+}
