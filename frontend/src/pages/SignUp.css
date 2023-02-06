@@ -1,38 +1,56 @@
-.SignUp {
-  background-color: #e6d7fb;
-  color: rgba(70, 49, 124, 1);
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+  margin: 40px;
+  padding: 40px;
+  background-color: #7c53c3;
+  color: #fff;
+  border-radius: 10px;
 }
 
-.SignUp form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.SignUp label {
-  margin-top: 20px;
-}
-
-.SignUp input[type="text"],
-.SignUp input[type="email"],
-.SignUp input[type="password"] {
-  height: 40px;
-  width: 300px;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin: 10px 0;
   padding: 10px;
-  font-size: 16px;
-  margin-top: 10px;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
 }
 
-.SignUp button[type="submit"] {
-  height: 40px;
-  width: 300px;
-  background-color: rgba(70, 49, 124, 1);
-  color: #e6d7fb;
-  font-size: 16px;
+button[type="submit"] {
   margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #7c53c3;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
   cursor: pointer;
+}
+
+.start-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.start-box img {
+  width: 5em;
+  height: 5em;
+  border-radius: 1.5em;
+}
+
+.log-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  padding: 40px;
+  background-color: #7c53c3;
+  color: #fff;
+  border-radius: 10px;
 }

@@ -1,24 +1,25 @@
-import React from "react";
-import "./SignUp.css";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import instanceAxios from "../services/axios";
+import { AuthContext } from "../context/AuthContext";
 // eslint-disable-next-line import/no-unresolved
 import Dreams from "../assets/dreams.svg";
 
-export default function Signin() {
+export default function Login() {
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, email, password } = e.target.elements;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const { email, password } = event.target.elements;
     instanceAxios
-      .post("/auth/register", {
-        name: name.value,
+      .post("/auth/login", {
         email: email.value,
         password: password.value,
       })
       .then((res) => {
-        console.warn(res.data);
-        navigate("/");
+        login(res.data.token);
+        navigate("/home");
       })
       .catch((err) => console.error(err));
   };
@@ -27,16 +28,9 @@ export default function Signin() {
     <div>
       <div className="start-box">
         <img className="logo-dream" alt="DreamSpace logo" src={Dreams} />
-        <h2 className="title-signup">Créer un compte</h2>
+        <h2 className="title-signup"> Connectez-vous à votre compte</h2>
       </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Enter your name"
-          required
-        />
+      <form className="log-in" onSubmit={handleSubmit}>
         <input
           id="email"
           name="email"
@@ -51,15 +45,16 @@ export default function Signin() {
           placeholder="Enter your password"
           required
         />
-        <button type="submit">✨ Create my DreamSpace ✨</button>
+        <button type="submit">✨ Enter ✨</button>
       </form>
-      <div className="log-in" />
-      <p>Vous avez déjà un compte ? </p>
-      <Link to="/">
-        <button className="start-button" type="button">
-          Connectez-vous
-        </button>
-      </Link>{" "}
+      <div className="pas-compte">
+        <p>
+          Pas de compte ?
+          <Link to="/signup" className="link">
+            Créez-en un
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Dreams from "../assets/Dreams.svg";
 import NavBar from "../components/NavBar";
-// eslint-disable-next-line import/no-unresolved
-import Dreams from "../assets/dreams.svg";
 import "./Home.css";
 
 function Home() {
@@ -20,11 +18,6 @@ function Home() {
           your profile.
         </p>
       </section>
-      <Link to="/signup">
-        <button className="start-button" type="button">
-          Acess DreamSpace
-        </button>
-      </Link>{" "}
     </div>
   );
 }
